@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.logo {
+    max-height: 30px;
+}
+
+.hamburger {
+    padding: 0;
+}
+
+.hamburger-inner, 
+.hamburger-inner:after, 
+.hamburger-inner:before {
+    height: 2px;
+    background-color: #E84B20;
+}
+
+.hamburger.is-active .hamburger-inner:before,
+.hamburger.is-active .hamburger-inner:after,
+.hamburger.is-active .hamburger-inner {
+    background-color: #E84B20;
+}
