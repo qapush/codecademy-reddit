@@ -4,6 +4,5 @@
 
 </br>
 
-![Mobile wireframe](/wireframe/wireframe-1.jpg)
-![Desktop wireframe](/wireframe/wireframe-2.jpg)
+![Wireframes](/wireframe/wireframes.jpg)
 
