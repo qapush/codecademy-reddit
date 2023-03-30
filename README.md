@@ -2,12 +2,8 @@
 
 ## Wireframes
 
-### Mobile:
+</br>
 
-![Tux, the Linux mascot](/wireframe/mobile-1.jpg)
-![Tux, the Linux mascot](/wireframe/mobile-3.jpg)
+![Mobile wireframe](/wireframe/wireframe-1.jpg)
+![Desktop wireframe](/wireframe/wireframe-2.jpg)
 
-### Desktop:
-
-![Tux, the Linux mascot](/wireframe/desktop-1.jpg)
-![Tux, the Linux mascot](/wireframe/desktop-2.jpg)
