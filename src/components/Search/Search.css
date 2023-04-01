@@ -1,0 +1,20 @@
+.search {
+    font-size: 1.3rem;
+}
+
+.search input {
+    margin: 0.5rem;
+}
+
+.search button {
+    border: none;
+    background: none;
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+button svg {
+    vertical-align: middle;
+    color: #E84B20;
+    margin-top: 3px;
+}

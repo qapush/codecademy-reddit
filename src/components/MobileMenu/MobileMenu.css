@@ -1,0 +1,11 @@
+.mobile__menu {
+    position: absolute;
+    top: -1000%;
+    transition: top 400ms ease-out;
+    z-index: 8;
+}
+
+
+.mobile__menu.show {
+    top: 100%;
+}

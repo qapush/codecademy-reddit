@@ -1,7 +1,14 @@
 header {
+    position: relative;
+}
+
+nav {
+    padding: 0.5rem;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
+    background-color: white;
+    z-index: 10;
 }
 
 .logo {
@@ -12,8 +19,8 @@ header {
     padding: 0;
 }
 
-.hamburger-inner, 
-.hamburger-inner:after, 
+.hamburger-inner,
+.hamburger-inner:after,
 .hamburger-inner:before {
     height: 2px;
     background-color: #E84B20;
