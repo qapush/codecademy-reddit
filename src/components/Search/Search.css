@@ -22,6 +22,6 @@
 
 button svg {
     vertical-align: middle;
-    color: #E84B20;
+    color: var(--main-color);
     margin-top: 3px;
 }

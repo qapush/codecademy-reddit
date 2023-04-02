@@ -1,5 +1,8 @@
-
 @import "hamburgers/dist/hamburgers.min.css";
+
+:root {
+  --main-color: #E84B20;
+}
 
 body {
   margin: 0;

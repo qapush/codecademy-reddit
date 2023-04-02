@@ -3,16 +3,17 @@ header {
 }
 
 nav {
-    padding: 0.5rem 0;
     position: relative;
     background-color: white;
-    z-index: 10;
 }
 
 .navpanel {
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    background-color: white;
+    z-index: 10;
 }
 
 .logo {
