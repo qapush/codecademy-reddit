@@ -3,6 +3,8 @@
     top: -1000%;
     transition: top 400ms ease-out;
     z-index: 8;
+    background-color: antiquewhite;
+    width: 100%;
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import SubredditsList from '../Subreddits/SubredditsList'
+import SubredditsList from '../SubredditsList/SubredditsList'
 import Search from '../Search/Search';
 import './MobileMenu.css';
 

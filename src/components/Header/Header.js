@@ -9,7 +9,7 @@ import MediaQuery from 'react-responsive'
 
 export default function Header() {
 
-  const [mobileMenuActive, setMobileMenuActive] = useState(false);
+  const [mobileMenuActive, setMobileMenuActive] = useState(true);
 
   let burgerButtonClass = "hamburger hamburger--collapse"
   if (mobileMenuActive) burgerButtonClass += " is-active";
@@ -20,20 +20,23 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <img src={logo} alt="Logo" className="logo" />
-
-        <MediaQuery maxWidth={570}>
-          <button className={burgerButtonClass} type="button" onClick={toggleMobileMenu}>
-            <span className="hamburger-box">
-              <span className="hamburger-inner"></span>
-            </span>
-          </button>
-        </MediaQuery>
         
+        <div className="navpanel">
+          <img src={logo} alt="Logo" className="logo" />
+          <MediaQuery maxWidth={700}>
+            <button className={burgerButtonClass} type="button" onClick={toggleMobileMenu}>
+              <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
+              </span>
+            </button>
+          </MediaQuery>
+        </div>
+
+        <MediaQuery maxWidth={700}>
+          <MobileMenu show={mobileMenuActive} />
+        </MediaQuery>
+
       </nav>
-      <MediaQuery maxWidth={570}>
-        <MobileMenu show={mobileMenuActive} />
-      </MediaQuery>
     </header>
   );
 }

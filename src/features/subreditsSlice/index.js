@@ -24,9 +24,8 @@ const subreditsSlice = createSlice({
         } )
             .addCase(fetchSubreddits.fulfilled, (state, action) => {
                 state.subreddits = action.payload.data.children.map(el => {
-                    console.log(el.data)
                     const { display_name_prefixed, id, icon_img } = el.data;
-                    return [display_name_prefixed, id, icon_img];
+                    return {display_name_prefixed, id, icon_img};
                 });
                 state.subredditsLoading = false;
                 state.subredditsError = false;
@@ -38,4 +37,6 @@ const subreditsSlice = createSlice({
     }
 })
 
+
+export const selectSubreddits = state => state.subreddits.subreddits;
 export default subreditsSlice.reducer;

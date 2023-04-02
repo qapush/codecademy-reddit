@@ -2,8 +2,15 @@
     font-size: 1.3rem;
 }
 
+.search form {
+    display: flex;
+    margin: auto;
+    max-width: 500px;
+}
+
 .search input {
     margin: 0.5rem;
+    flex-grow: 1;
 }
 
 .search button {
