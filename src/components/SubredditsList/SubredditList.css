@@ -1,7 +1,7 @@
 .subreddit-list ul {
     list-style: none;
     max-height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 0;
 }
 
