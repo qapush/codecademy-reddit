@@ -1,0 +1,23 @@
+.card {
+    box-shadow: 0px 5px 15px 0px rgba(66, 68, 90, 0.5);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.card-header {
+    font-size: 0.7rem;
+}
+
+.card-subreddit {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card video {
+    width: 100%;
+}

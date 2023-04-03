@@ -1,9 +1,10 @@
 import Header from "../Header/Header";
 import MediaQuery from "react-responsive";
 import SubredditsList from "../SubredditsList/SubredditsList";
-import Posts from '../Posts/Posts';
+import { Feed } from "../Feed/Feed";
 import { useDispatch } from "react-redux";
 import { fetchSubreddits } from "../../features/subreditsSlice";
+import { fetchFeed } from "../../features/feedSlice";
 import { useEffect } from "react";
 import "./App.css";
 
@@ -13,13 +14,14 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchSubreddits())
+    dispatch(fetchFeed())
   } )
 
   return (
       <div className="App">
       <Header />
       <main>
-        <Posts/>
+        <Feed/>
         <MediaQuery minWidth={700}>
           <SubredditsList/>  
         </MediaQuery>

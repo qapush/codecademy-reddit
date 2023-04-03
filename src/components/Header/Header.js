@@ -11,7 +11,7 @@ import Search from "../Search/Search";
 
 export default function Header() {
 
-  const [mobileMenuActive, setMobileMenuActive] = useState(true);
+  const [mobileMenuActive, setMobileMenuActive] = useState(false);
 
   let burgerButtonClass = "hamburger hamburger--collapse"
   if (mobileMenuActive) burgerButtonClass += " is-active";

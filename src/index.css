@@ -3,6 +3,7 @@
 :root {
   --main-color: #E84B20;
   --grey: rgb(229, 229, 229);
+  box-sizing: border-box;
 }
 
 body {
@@ -17,4 +18,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  text-align: center;
 }

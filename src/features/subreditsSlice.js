@@ -18,7 +18,7 @@ const subreditsSlice = createSlice({
     },
     extraReducers: builder => {
         builder
-            .addCase(fetchSubreddits.pending, (state, action) => {
+            .addCase(fetchSubreddits.pending, (state) => {
                 state.subredditsLoading = true;
                 state.subredditsError = false;
         } )
@@ -30,7 +30,7 @@ const subreditsSlice = createSlice({
                 state.subredditsLoading = false;
                 state.subredditsError = false;
         } )
-            .addCase(fetchSubreddits.rejected, (state, action) => {
+            .addCase(fetchSubreddits.rejected, (state) => {
                 state.subredditsLoading = false;
                 state.subredditsError = true;
         } )

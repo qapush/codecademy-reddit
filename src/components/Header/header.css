@@ -10,6 +10,7 @@ nav {
 .navpanel {
     padding: 0.5rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     position: relative;
     background-color: var(--grey);
