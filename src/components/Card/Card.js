@@ -11,7 +11,7 @@ export  const Card = ({subreddit, title, author, selftext, post_hint, url, media
             </div>
             <h4 className="card-title">{title}</h4>
             { selftext && <p>{selftext}</p> }
-            { post_hint === "image" && <img src={url}/> }
+            { post_hint === "image" && <img src={url} alt={title} /> }
             {media && media.reddit_video && makeVideo(media.reddit_video.fallback_url)}
 
         </div>
