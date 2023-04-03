@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchFeed = createAsyncThunk(
     'feed/get',
     async (feed = 'best') => {
-        const data = await fetch(`https://www.reddit.com/${feed}/.json`);
+        const data = await fetch(`https://www.reddit.com/${feed}.json`);
         const res = await data.json();
         return res;
     }
@@ -14,7 +14,13 @@ const feedSlice = createSlice({
     initialState: {
         feed: [],
         feedLoading: false,
-        feedError: false
+        feedError: false, 
+        currentFeed: "r/askreddit"
+    },
+    reducers: {
+        currentFeedChange(state, action) {
+            state.currentFeed = action.payload;
+        }   
     },
     extraReducers: builder => {
         builder
@@ -24,8 +30,8 @@ const feedSlice = createSlice({
         } )
             .addCase(fetchFeed.fulfilled, (state, action) => {
                 state.feed = action.payload.data.children.map(el => {
-                    const { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media  } = el.data;
-                    return { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media  };
+                        const { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media } = el.data;
+                        return { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media};                    
                 });
                 state.feedLoading = false;
                 state.feedError = false;
@@ -40,3 +46,5 @@ const feedSlice = createSlice({
 
 export default feedSlice.reducer;
 export const selectFeed = state => state.feed.feed;
+export const currentFeed = state => state.feed.currentFeed;
+export const {currentFeedChange} = feedSlice.actions;

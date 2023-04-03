@@ -4,7 +4,6 @@ import SubredditsList from "../SubredditsList/SubredditsList";
 import { Feed } from "../Feed/Feed";
 import { useDispatch } from "react-redux";
 import { fetchSubreddits } from "../../features/subreditsSlice";
-import { fetchFeed } from "../../features/feedSlice";
 import { useEffect } from "react";
 import "./App.css";
 
@@ -14,7 +13,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchSubreddits())
-    dispatch(fetchFeed())
   } )
 
   return (

@@ -1,12 +1,21 @@
 import React from "react";
-import { selectFeed } from "../../features/feedSlice";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { selectFeed, currentFeed, fetchFeed } from "../../features/feedSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Card } from "../Card/Card";
 import './Feed.css';
 
 export const Feed = () => {
 
     const feed = useSelector(selectFeed);
+    const feedToLoad = useSelector(currentFeed);
+    const dispatch = useDispatch();
+
+    
+
+    useEffect(() => {
+        dispatch(fetchFeed(feedToLoad))
+    }, [feedToLoad])
 
     let feedContent = null;
 
