@@ -1,6 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import "./header.css";
+import { useSelector, useDispatch } from "react-redux";
+import { selectMobileMenuOpened, mobileMenuToggle } from "../../features/mobileMenuSlice";
 import logo from "../../img/logo.svg";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import MediaQuery from 'react-responsive'
@@ -11,12 +12,14 @@ import Search from "../Search/Search";
 
 export default function Header() {
 
-  const [mobileMenuActive, setMobileMenuActive] = useState(false);
+
+  const mobileMenuActive = useSelector(selectMobileMenuOpened);
+  const dispatch = useDispatch();
 
   let burgerButtonClass = "hamburger hamburger--collapse"
   if (mobileMenuActive) burgerButtonClass += " is-active";
   const toggleMobileMenu = () => {
-    setMobileMenuActive(!mobileMenuActive)
+    dispatch(mobileMenuToggle())
   }
 
   return (
@@ -28,19 +31,19 @@ export default function Header() {
 
           <Switch />
           
-          <MediaQuery maxWidth={700}>
+          <MediaQuery maxWidth={699}>
             <button className={burgerButtonClass} type="button" onClick={toggleMobileMenu}>
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
               </span>
             </button>
           </MediaQuery>
-          <MediaQuery minWidth={700}>
+          <MediaQuery minWidth={701}>
             <Search/>
           </MediaQuery>
         </div>
 
-        <MediaQuery maxWidth={700}>
+        <MediaQuery maxWidth={699}>
           <MobileMenu show={mobileMenuActive} />
         </MediaQuery>
 

@@ -1,7 +1,10 @@
+.App {
+    position: relative;
+}
+
 @media only screen and (min-width: 700px) {
     main {
         display: flex;
-        justify-content: space-between;
         align-items: start;
         max-width: 900px;
         margin: auto;

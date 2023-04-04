@@ -21,7 +21,7 @@
     color: var(--main-color);
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 701px) {
     .switch {
         position: relative;
         width: auto;

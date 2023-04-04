@@ -5,6 +5,7 @@
     transition: box-shadow 0.3s;
     box-shadow: 0px 5px 15px 0px rgba(66, 68, 90, 0.2);
     cursor: pointerv;
+    overflow-wrap: break-word;
 }
 
 .card:hover {

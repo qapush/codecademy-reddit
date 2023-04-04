@@ -1,6 +1,6 @@
 import React from 'react'
 import './Switch.css';
-import { MdStar, MdLocalFireDepartment, MdFiberNew, MdTrendingUp } from 'react-icons/md';
+import { MdStar, MdFiberNew, MdTrendingUp } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { currentFeedChange } from '../../features/feedSlice';
 
@@ -13,10 +13,6 @@ export default function Switch() {
         <div className="switch-item" onClick={() => dispatch(currentFeedChange("best"))}>
             <MdStar />
             <span>Best</span>
-        </div>
-        <div className="switch-item" onClick={() => dispatch(currentFeedChange("hot"))}>
-            <MdLocalFireDepartment />
-            <span>Hot</span>
         </div>
         <div className="switch-item" onClick={() => dispatch(currentFeedChange("new"))}>
             <MdFiberNew />  

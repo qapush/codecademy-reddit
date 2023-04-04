@@ -1,5 +1,6 @@
 import React from "react";
 import './Card.css';
+import ReactMarkdown from 'react-markdown'
 
 export  const Card = ({subreddit, title, author, selftext, post_hint, url, media}) => {
     return(
@@ -10,7 +11,7 @@ export  const Card = ({subreddit, title, author, selftext, post_hint, url, media
                 <span className="card-author">Posted by {author}</span>
             </div>
             <h4 className="card-title">{title}</h4>
-            { selftext && <p>{selftext}</p> }
+            { selftext && <ReactMarkdown>{selftext}</ReactMarkdown> }
             { post_hint === "image" && <img src={url} alt={title} /> }
             { media && media.reddit_video && makeVideo(media.reddit_video.fallback_url)}
 
