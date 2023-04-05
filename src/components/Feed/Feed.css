@@ -1,5 +1,6 @@
 .feed {
     padding: 0.5rem;
+    margin-bottom: 100px;
 }
 
 .feed ul {
@@ -14,6 +15,6 @@
 
 @media only screen and (min-width: 701px) {
     .feed {
-        max-width: 70%;
+        width: 70%;
     }
 }

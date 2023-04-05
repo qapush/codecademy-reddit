@@ -31,14 +31,16 @@ export const Feed = () => {
         />
     })
 
+    if(isFeedLoading) window.scrollTo(0, 0)
 
     return(
         <div className="feed">
             <h2>{feedToLoad}</h2>
-            {isFeedLoading && <SkeletonCard/>}
-            <ul>
+            
+            {isFeedLoading ? <SkeletonCard/> : <ul>
                 {feedContent}
-            </ul>
+            </ul>}
+            
         </div>
     )
 }
