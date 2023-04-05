@@ -8,17 +8,34 @@
     justify-content: center;
 }
 
+
 .switch-item {
-    margin: 0.5rem 1rem;
+    padding: 0.3rem;
+    margin: 0.2rem 1rem;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.switch-item:hover {
+    background-color: white;
 }
 
 .switch-item svg {
     vertical-align: middle;
     color: var(--main-color);
+}
+
+.switch-item.active {
+    color: white;
+    background-color: var(--main-color);
+}
+
+.switch-item.active svg {
+    color: white;
 }
 
 @media only screen and (min-width: 701px) {
@@ -33,6 +50,7 @@
         font-size: 1.2rem;
         display: flex;
         flex-direction: row;
+        padding: 1rem 0.3rem;
     }
 
     .switch-item svg {

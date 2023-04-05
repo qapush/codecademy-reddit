@@ -20,7 +20,7 @@ function App() {
       <Header />
       <main>
         <Feed/>
-        <MediaQuery minWidth={699}>
+        <MediaQuery minWidth={701}>
           <SubredditsList/>  
         </MediaQuery>
       </main>

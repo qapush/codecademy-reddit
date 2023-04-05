@@ -1,14 +1,16 @@
 import React from "react";
 import './Card.css';
 import ReactMarkdown from 'react-markdown'
+import Skeleton from "react-loading-skeleton";
 
 export  const Card = ({subreddit, title, author, selftext, post_hint, url, media}) => {
     return(
         <div className="card">
             <div className="card-header">
-                <span className="card-subreddit">{subreddit}</span>
+                <span className="card-subreddit">{subreddit || <Skeleton/>}</span>
                 <span> • </span>
                 <span className="card-author">Posted by {author}</span>
+                
             </div>
             <h4 className="card-title">{title}</h4>
             { selftext && <ReactMarkdown>{selftext}</ReactMarkdown> }

@@ -1,6 +1,13 @@
 .subreddit {
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.subreddit.active,
+.subreddit:hover {
+    background-color: var(--main-color);
+    color: white
 }
 
 .subreddit img {

@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 701px) {
     .subreddit-list {
         font-size: 0.8rem;
     }

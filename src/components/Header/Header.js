@@ -2,6 +2,7 @@ import React from "react";
 import "./header.css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectMobileMenuOpened, mobileMenuToggle } from "../../features/mobileMenuSlice";
+import { currentFeedChange } from "../../features/feedSlice";
 import logo from "../../img/logo.svg";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import MediaQuery from 'react-responsive'
@@ -27,11 +28,11 @@ export default function Header() {
       <nav>
         
         <div className="navpanel">
-          <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo" onClick={() => dispatch(currentFeedChange("Best"))}/>
 
           <Switch />
           
-          <MediaQuery maxWidth={699}>
+          <MediaQuery maxWidth={700}>
             <button className={burgerButtonClass} type="button" onClick={toggleMobileMenu}>
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
@@ -43,7 +44,7 @@ export default function Header() {
           </MediaQuery>
         </div>
 
-        <MediaQuery maxWidth={699}>
+        <MediaQuery maxWidth={700}>
           <MobileMenu show={mobileMenuActive} />
         </MediaQuery>
 

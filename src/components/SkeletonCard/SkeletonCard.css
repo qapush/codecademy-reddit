@@ -1,0 +1,15 @@
+.skeleton-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+    box-shadow: 0px 5px 15px 0px rgba(66, 68, 90, 0.2);
+    cursor: pointerv;
+    overflow-wrap: break-word;
+
+}
+
+.skeleton-card .react-loading-skeleton:first-child {
+    margin-bottom: 0.6rem;
+    height: 0.8rem;
+}
