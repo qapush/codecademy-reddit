@@ -6,6 +6,10 @@ import { useDispatch } from "react-redux";
 import { fetchSubreddits } from "../../features/subreditsSlice";
 import { useEffect } from "react";
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 
 function App() {
 
@@ -13,18 +17,25 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchSubreddits())
-  } )
+  })
 
   return (
+    <Router>
       <div className="App">
-      <Header />
-      <main>
-        <Feed/>
-        <MediaQuery minWidth={701}>
-          <SubredditsList/>  
-        </MediaQuery>
-      </main>
+        <Header />
+        <main>
+          <Route path="/" exact>
+            <Feed />
+          </Route>
+          <Route path="/:name" exact>
+            <h3>POST</h3>
+          </Route>
+          <MediaQuery minWidth={701}>
+            <SubredditsList />
+          </MediaQuery>
+        </main>
       </div>
+    </Router>
   );
 }
 
