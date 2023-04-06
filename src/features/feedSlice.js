@@ -29,10 +29,9 @@ const feedSlice = createSlice({
                 state.feedError = false;
         } )
             .addCase(fetchFeed.fulfilled, (state, action) => {
-                console.log(action.payload)
                 state.feed = action.payload.data.children.map(el => {
-                        const { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media } = el.data;
-                        return { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media};                    
+                        const { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media, num_comments } = el.data;
+                        return { subreddit_name_prefixed, id, author, title, post_hint, url, selftext, media, num_comments};                    
                 });
                 state.feedLoading = false;
                 state.feedError = false;

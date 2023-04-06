@@ -10,6 +10,7 @@ import {
   BrowserRouter as Router,
   Route,
 } from "react-router-dom";
+import CommentsFeed from "../CommentsFeed/CommentsFeed";
 
 function App() {
 
@@ -24,11 +25,11 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <Route path="/" exact>
-            <Feed />
+          <Route path="/r/:subreddit/:id" exact>
+            <CommentsFeed/>
           </Route>
-          <Route path="/:name" exact>
-            <h3>POST</h3>
+          <Route path="/" exact>
+            <Feed/>
           </Route>
           <MediaQuery minWidth={701}>
             <SubredditsList />
