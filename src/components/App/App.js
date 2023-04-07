@@ -10,7 +10,7 @@ import {
   BrowserRouter as Router,
   Route,
 } from "react-router-dom";
-import CommentsFeed from "../CommentsFeed/CommentsFeed";
+
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
         <Header />
         <main>
           <Route path="/r/:subreddit/:id" exact>
-            <CommentsFeed/>
+            
           </Route>
           <Route path="/" exact>
             <Feed/>

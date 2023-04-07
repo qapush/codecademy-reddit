@@ -6,6 +6,9 @@ import { Card } from "../Card/Card";
 import SkeletonCard from "../SkeletonCard/SkeletonCard";
 import './Feed.css';
 
+
+import { fetchComments } from "../../features/commentsSlice";
+
 export const Feed = () => {
 
     const feed = useSelector(selectFeed);
@@ -17,6 +20,7 @@ export const Feed = () => {
 
     useEffect(() => {
         dispatch(fetchFeed(feedToLoad))
+        dispatch(fetchComments({subreddit: 'web_design', postId: '12bh9d6'}))
     }, [feedToLoad, dispatch])
 
     const feedContent = feed.map( feedData => {

@@ -15,14 +15,12 @@ export const Card = ({
   media,
   num_comments,
   id,
-  nocomments
+  nocomments,
 }) => {
   return (
     <div className="card">
       <div className="card-header">
-        <span className="card-subreddit">
-          {subreddit_name_prefixed}
-        </span>
+        <span className="card-subreddit">{subreddit_name_prefixed}</span>
         <span> • </span>
         <span className="card-author">Posted by {author}</span>
       </div>
@@ -32,18 +30,16 @@ export const Card = ({
       {media &&
         media.reddit_video &&
         makeVideo(media.reddit_video.fallback_url)}
-      {
-        !nocomments && <>
-          <hr/> 
-        <Link to={`/${subreddit_name_prefixed}/${id}`}>
-          <p className="card-comments">
-            <MdForum /> <span>{num_comments}</span> comments
-          </p>
-        </Link>
+      {!nocomments && (
+        <>
+          <hr />
+          <Link to={`/${subreddit_name_prefixed}/${id}`}>
+            <p className="card-comments">
+              <MdForum /> <span>{num_comments}</span> comments
+            </p>
+          </Link>
         </>
-          
-
-      }
+      )}
     </div>
   );
 };
