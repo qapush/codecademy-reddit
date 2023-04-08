@@ -12,9 +12,11 @@ import {
 } from "react-router-dom";
 
 
+
 function App() {
 
   const dispatch = useDispatch()
+
 
   useEffect(() => {
     dispatch(fetchSubreddits())
@@ -25,12 +27,7 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <Route path="/r/:subreddit/:id" exact>
-            
-          </Route>
-          <Route path="/" exact>
-            <Feed/>
-          </Route>
+          <Feed />
           <MediaQuery minWidth={701}>
             <SubredditsList />
           </MediaQuery>

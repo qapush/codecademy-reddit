@@ -15,7 +15,7 @@ export const Card = ({
   media,
   num_comments,
   id,
-  nocomments,
+  comments,
 }) => {
   return (
     <div className="card">
@@ -30,7 +30,7 @@ export const Card = ({
       {media &&
         media.reddit_video &&
         makeVideo(media.reddit_video.fallback_url)}
-      {!nocomments && (
+      {!comments && (
         <>
           <hr />
           <Link to={`/${subreddit_name_prefixed}/${id}`}>

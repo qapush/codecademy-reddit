@@ -46,6 +46,6 @@ const feedSlice = createSlice({
 
 export default feedSlice.reducer;
 export const selectFeed = state => state.feed.feed;
-export const currentFeed = state => state.feed.currentFeed;
+export const selectCurrentFeed = state => state.feed.currentFeed;
 export const selectFeedLoading = state => state.feed.feedLoading;
 export const {currentFeedChange} = feedSlice.actions;

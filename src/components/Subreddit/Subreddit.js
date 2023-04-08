@@ -1,24 +1,28 @@
 import React from 'react'
 import defaultLogo from '../../img/default-logo.svg';
-import { currentFeedChange, currentFeed } from '../../features/feedSlice';
+import { currentFeedChange, selectCurrentFeed } from '../../features/feedSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import './Subreddit.css';
-import { mobileMenuClose } from '../../features/mobileMenuSlice';
+import { mobileMenuClose, selectMobileMenuOpened } from '../../features/mobileMenuSlice';
+import { Link } from 'react-router-dom';
 
 export default function Subreddit({name, img}) {
 
   const dispatch = useDispatch();
-  const feed = useSelector(currentFeed);
+  const feed = useSelector(selectCurrentFeed);
+  const mobileMenuOpened = useSelector(selectMobileMenuOpened);
 
   const handleClick = () => {
     dispatch(currentFeedChange(name))
-    dispatch(mobileMenuClose())
+    if(mobileMenuOpened) dispatch(mobileMenuClose())
   }
   
   return (
-    <li className={ `subreddit ${feed === name ? 'active' : ''}` } onClick={handleClick}>
+    <Link to="/" className='subreddit-link'>
+      <li className={ `subreddit ${feed === name ? 'active' : ''}` } onClick={handleClick}>
           <img src={ img || defaultLogo } alt={name} />
           <span>{name}</span>
       </li>
+    </Link>
   )
 }

@@ -23,9 +23,10 @@ const commentsSlice = createSlice({
     extraReducers: builder => {
         builder
         .addCase(fetchComments.fulfilled, (state, action) => {
-            state.comments = action.payload;
+            state.comments = action.payload[1].data.children;
         })
     }
 })
 
+export const selectComments = state => state.comments.comments;
 export default commentsSlice.reducer;
