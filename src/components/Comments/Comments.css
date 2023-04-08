@@ -1,0 +1,10 @@
+.comment {
+    border: 1px solid var(--grey);
+    border-left: 2px solid var(--main-color);
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.comment h4 {
+    color: var(--main-color)
+}

@@ -3,9 +3,10 @@ import { useEffect } from "react";
 import { selectFeed, selectCurrentFeed, fetchFeed, selectFeedLoading } from "../../features/feedSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Posts from "../Posts/Posts";
-import { Route } from "react-router-dom";
 import './Feed.css';
+import { Route } from "react-router-dom";
 import { SkeletonCard } from "../SkeletonCard/SkeletonCard";
+import { Comments } from "../Comments/Comments";
 
 
 export const Feed = () => {
@@ -19,20 +20,13 @@ export const Feed = () => {
         dispatch(fetchFeed(feedToLoad))
     }, [feedToLoad, dispatch])
 
-    
-
-
     return(
         <div className="feed">
             <Route path="/" exact>
-                {isFeedLoading ? <SkeletonCard/> : <Posts feed={feed}/> }
+                {isFeedLoading ? <SkeletonCard count={25}/> : <Posts feed={feed}/> }
             </Route>
-            <Route path="/r/:subreddit/:postId" exact render={(props) => {
-                const { postId} = props.match.params;
-                const onePost = feed.filter(post => post.id === postId)
-                return <Posts feed={onePost} comments/>
-            }}>
-                    
+            <Route path="/r/:subreddit/:postId" exact >
+                <Comments/>
             </Route>
         </div>
     )

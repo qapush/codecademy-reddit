@@ -1,20 +1,11 @@
 import React from "react";
 import { Card } from "../Card/Card";
 import { Comments } from "../Comments/Comments";
-import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import {currentFeedChange} from '../../features/feedSlice';
-
 
 
 export default function Posts({ feed, comments }) {
   
   window.scrollTo(0, 0);
-
-  const {subreddit} = useParams();
-  const dispatch = useDispatch()
-
-  if(comments && feed.length === 0) dispatch(currentFeedChange('r/' + subreddit));
 
   const feedContent = feed.map((feedData) => {
     const {

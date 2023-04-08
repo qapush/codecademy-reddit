@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
-  Route,
 } from "react-router-dom";
 
 
@@ -27,7 +26,7 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <Feed />
+          <Feed/>
           <MediaQuery minWidth={701}>
             <SubredditsList />
           </MediaQuery>
