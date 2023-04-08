@@ -7,16 +7,19 @@ import { fetchComments, selectComments, selectCommentsLoading } from '../../feat
 import { SkeletonCard } from '../SkeletonCard/SkeletonCard'
 import { Card } from '../Card/Card'
 import ReactMarkdown from "react-markdown";
+import {TbUfo} from "react-icons/tb"
 
 
 export const Comments = () => {
+
+  window.scrollTo(0,0);
 
     const {subreddit, postId} = useParams()
     const dispatch = useDispatch()
     const comments = useSelector(selectComments);
     const commentsLoading = useSelector(selectCommentsLoading);   
   let post = null;
-  let commentsToRender = null;
+  let commentsToRender = <div className='no-comments'><TbUfo className='ufo'/><span>no comments found...</span></div>;
 
     useEffect(() => {
         dispatch(fetchComments({subreddit, postId}))
@@ -26,7 +29,7 @@ export const Comments = () => {
       post = <Card {...comments[0].data.children[0].data} comments />
     }
   
-    if (comments[1]) {
+    if (comments[1] && comments[1].data.children.length > 0) {
       commentsToRender = comments[1].data.children.map(comment => {
         return comment.kind !== 'more' ? <div className="comment" key={comment.data.id}>
         <h4>- {comment.data.author}</h4>
@@ -37,13 +40,14 @@ export const Comments = () => {
       } )
     }
 
+
   
 
     return (
       <div className="comments">
           { commentsLoading ? <SkeletonCard /> : post }
           <h2>Comments</h2>
-          { commentsLoading ? <SkeletonCard /> : commentsToRender}
+          { commentsLoading ? <SkeletonCard count={50}/> : commentsToRender}
       </div>
     )
 }

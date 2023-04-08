@@ -9,6 +9,15 @@ export const fetchFeed = createAsyncThunk(
     }
 )
 
+export const search = createAsyncThunk(
+    'feed/search',
+    async (query) => {
+        const data = await fetch(`https://www.reddit.com/search/.json?q=${query}`);
+        const res = await data.json();
+        return res;
+    }
+)
+
 const feedSlice = createSlice({
     name: 'feed',
     initialState: {
@@ -24,6 +33,7 @@ const feedSlice = createSlice({
     },
     extraReducers: builder => {
         builder
+            // Fetch feed
             .addCase(fetchFeed.pending, (state) => {
                 state.feedLoading = true;
                 state.feedError = false;
@@ -40,6 +50,7 @@ const feedSlice = createSlice({
                 state.feedLoading = false;
                 state.feedError = true;
         } )
+        // Search 
     }
 })
 

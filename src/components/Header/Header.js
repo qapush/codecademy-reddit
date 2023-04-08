@@ -8,6 +8,7 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 import MediaQuery from 'react-responsive'
 import Switch from "../Switch/Switch";
 import Search from "../Search/Search";
+import { Link } from "react-router-dom";
 
 
 
@@ -28,7 +29,9 @@ export default function Header() {
       <nav>
         
         <div className="navpanel">
-          <img src={logo} alt="Logo" className="logo" onClick={() => dispatch(currentFeedChange("Best"))}/>
+          <Link to="/">
+            <img src={logo} alt="Logo" className="logo" onClick={() => dispatch(currentFeedChange("Best"))}/>
+          </Link>
 
           <Switch />
           

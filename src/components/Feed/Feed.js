@@ -17,15 +17,17 @@ export const Feed = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchFeed(feedToLoad))
+        if(feedToLoad !== 'Search results') dispatch(fetchFeed(feedToLoad))
     }, [feedToLoad, dispatch])
 
     return(
         <div className="feed">
             <Route path="/" exact>
+                <h2>{feedToLoad}</h2>
                 {isFeedLoading ? <SkeletonCard count={25}/> : <Posts feed={feed}/> }
             </Route>
-            <Route path="/r/:subreddit/:postId" >
+
+            <Route path="/r/:subreddit/:postId" exact>
                 <Comments/>
             </Route>
         </div>
