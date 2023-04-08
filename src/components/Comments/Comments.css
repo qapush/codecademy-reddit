@@ -1,9 +1,22 @@
 .comment {
     border: 1px solid var(--grey);
-    border-left: 2px solid var(--main-color);
+    border-left: 2px solid var(--grey);
+    border-right: ;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     line-break: anywhere;
+}
+
+.comment .comment {
+    padding-right: 0;
+    padding-left: 2px;
+    margin: 5px;
+    border-right: none;
+    border-left: 2px solid var(--grey);
+}
+
+.comment:hover {
+    border-left: 2px solid var(--main-color);
 }
 
 .comment h4 {

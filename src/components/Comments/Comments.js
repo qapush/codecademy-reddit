@@ -31,16 +31,9 @@ export const Comments = () => {
     }
   
     if (comments[1] && comments[1].data.children.length > 0) {
-      commentsToRender = 
-        comments[1].data.children
-          .filter( comment => comment.kind !== 'more')
-          .map(comment => {
-        return <div className="comment" key={comment.data.id}>
-        <h4>- {comment.data.author}</h4>
-        <ReactMarkdown>
-          {comment.data.body}
-        </ReactMarkdown>
-      </div>
+      commentsToRender = comments[1].data.children
+        .map(comment => {
+          return makeComment(comment)
       } )
     }  
 
@@ -51,4 +44,18 @@ export const Comments = () => {
           { commentsLoading ? <SkeletonCard count={50}/> : commentsToRender}
       </div>
     )
+}
+
+function makeComment(comment) {
+  if (comment.kind !== 'more') {
+    return (
+      <div className="comment" key={comment.data.id}>
+    <h4>- {comment.data.author}</h4>
+    <ReactMarkdown>
+      {comment.data.body}
+        </ReactMarkdown>
+      { comment.data.replies ? comment.data.replies.data.children.map( item => makeComment(item)) : null}
+  </div>
+    )
+  }
 }
