@@ -7,7 +7,8 @@ import { fetchComments, selectComments, selectCommentsLoading } from '../../feat
 import { SkeletonCard } from '../SkeletonCard/SkeletonCard'
 import { Card } from '../Card/Card'
 import ReactMarkdown from "react-markdown";
-import {TbUfo} from "react-icons/tb"
+import { TbUfo } from "react-icons/tb"
+import { AnimatedList } from 'react-animated-list'
 
 
 export const Comments = () => {
@@ -47,7 +48,9 @@ export const Comments = () => {
       <div className="comments">
           { commentsLoading ? <SkeletonCard /> : post }
           <h2>Comments</h2>
-          { commentsLoading ? <SkeletonCard count={50}/> : commentsToRender}
+        {commentsLoading ? <SkeletonCard count={50} /> : (
+          <AnimatedList animation={"grow"} initialAnimationDuration={2000}>{commentsToRender}</AnimatedList>
+          )}
       </div>
     )
 }

@@ -18,3 +18,16 @@
         width: 70%;
     }
 }
+
+.feed-error {
+    margin: 4rem auto;
+    color: var(--main-color);
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.feed-error svg {
+    font-size: 5rem;
+    display: block;
+    margin: auto;
+}
