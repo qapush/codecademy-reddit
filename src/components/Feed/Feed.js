@@ -25,7 +25,7 @@ export const Feed = () => {
             <Route path="/" exact>
                 {isFeedLoading ? <SkeletonCard count={25}/> : <Posts feed={feed}/> }
             </Route>
-            <Route path="/r/:subreddit/:postId" exact >
+            <Route path="/r/:subreddit/:postId" >
                 <Comments/>
             </Route>
         </div>
