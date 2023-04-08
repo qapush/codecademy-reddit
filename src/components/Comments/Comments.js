@@ -8,7 +8,7 @@ import { SkeletonCard } from '../SkeletonCard/SkeletonCard'
 import { Card } from '../Card/Card'
 import ReactMarkdown from "react-markdown";
 import { TbUfo } from "react-icons/tb"
-import { AnimatedList } from 'react-animated-list'
+
 
 
 export const Comments = () => {
@@ -31,8 +31,8 @@ export const Comments = () => {
     }
   
     if (comments[1] && comments[1].data.children.length > 0) {
-      commentsToRender = <AnimatedList animation={"grow"} initialAnimationDuration={2000}>
-        {comments[1].data.children
+      commentsToRender = 
+        comments[1].data.children
           .filter( comment => comment.kind !== 'more')
           .map(comment => {
         return <div className="comment" key={comment.data.id}>
@@ -41,8 +41,7 @@ export const Comments = () => {
           {comment.data.body}
         </ReactMarkdown>
       </div>
-      } )}
-      </AnimatedList>
+      } )
     }  
 
     return (

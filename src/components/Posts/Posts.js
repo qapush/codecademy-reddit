@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "../Card/Card";
 import { Comments } from "../Comments/Comments";
-import { AnimatedList } from 'react-animated-list';
+
 
 
 export default function Posts({ feed, comments }) {
@@ -39,9 +39,7 @@ export default function Posts({ feed, comments }) {
   });
 
   return <>
-    <AnimatedList animation={"grow"} initialAnimationDuration={3000}>
     {feedContent}
-    </AnimatedList>
     {comments ? <Comments/> : null }
   </>;
 }
