@@ -13,8 +13,8 @@ export const fetchComments = createAsyncThunk(
 
 const initialState = {
     comments: [],
-    postId: '',
-    subreddit: ''
+    commentsLoading: false,
+    commentsError: false
 }
 
 const commentsSlice = createSlice({
@@ -22,11 +22,22 @@ const commentsSlice = createSlice({
     initialState,
     extraReducers: builder => {
         builder
+        .addCase(fetchComments.pending, (state) => {
+            state.commentsLoading = true;
+            state.commentsError = false;
+        })
         .addCase(fetchComments.fulfilled, (state, action) => {
-            state.comments = action.payload[1].data.children;
+            state.comments = action.payload;
+            state.commentsLoading = false;
+            state.commentsError = false;
+        })
+        .addCase(fetchComments.rejected, (state) => {
+            state.commentsLoading = false;
+            state.commentsError = true;
         })
     }
 })
 
 export const selectComments = state => state.comments.comments;
 export default commentsSlice.reducer;
+export const selectCommentsLoading = state => state.comments.commentsLoading;
