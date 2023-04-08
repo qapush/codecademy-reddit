@@ -31,26 +31,25 @@ export const Comments = () => {
     }
   
     if (comments[1] && comments[1].data.children.length > 0) {
-      commentsToRender = comments[1].data.children.map(comment => {
-        return comment.kind !== 'more' ? <div className="comment" key={comment.data.id}>
+      commentsToRender = <AnimatedList animation={"grow"} initialAnimationDuration={2000}>
+        {comments[1].data.children
+          .filter( comment => comment.kind !== 'more')
+          .map(comment => {
+        return <div className="comment" key={comment.data.id}>
         <h4>- {comment.data.author}</h4>
         <ReactMarkdown>
           {comment.data.body}
         </ReactMarkdown>
-      </div> : null
-      } )
-    }
-
-
-  
+      </div>
+      } )}
+      </AnimatedList>
+    }  
 
     return (
       <div className="comments">
           { commentsLoading ? <SkeletonCard /> : post }
           <h2>Comments</h2>
-        {commentsLoading ? <SkeletonCard count={50} /> : (
-          <AnimatedList animation={"grow"} initialAnimationDuration={2000}>{commentsToRender}</AnimatedList>
-          )}
+          { commentsLoading ? <SkeletonCard count={50}/> : commentsToRender}
       </div>
     )
 }
