@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { selectFeed, selectCurrentFeed, fetchFeed, selectFeedLoading, selectFeedError } from "../../features/feedSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Posts from "../Posts/Posts";
-import './Feed.css';
 import { Route } from "react-router-dom";
 import { SkeletonCard } from "../SkeletonCard/SkeletonCard";
 import { Comments } from "../Comments/Comments";
-import { TbFaceIdError } from "react-icons/tb";
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
+import './Feed.css';
 
 
 export const Feed = () => {
@@ -19,16 +19,15 @@ export const Feed = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(feedToLoad !== 'Search results') dispatch(fetchFeed(feedToLoad))
+        if(feedToLoad !== 'Search results') dispatch(fetchFeed(feedToLoad));
     }, [feedToLoad, dispatch])
 
-    const errorMessage = <div className="feed-error"><TbFaceIdError /><span>Failed to load</span></div>;
 
     return(
         <div className="feed">
             <Route path="/" exact>
                 <h2>{feedToLoad}</h2>
-                {isFeedError ? errorMessage : null}
+                {isFeedError ? <ErrorMessage/> : null}
                 {isFeedLoading ? <SkeletonCard count={25}/> : <Posts feed={feed}/> }
             </Route>
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import './Comments.css'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,7 +6,8 @@ import { fetchComments, selectComments, selectCommentsLoading } from '../../feat
 import { SkeletonCard } from '../SkeletonCard/SkeletonCard'
 import { Card } from '../Card/Card'
 import ReactMarkdown from "react-markdown";
-import { TbUfo } from "react-icons/tb"
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage'
+import './Comments.css'
 
 
 
@@ -20,7 +20,7 @@ export const Comments = () => {
     const comments = useSelector(selectComments);
     const commentsLoading = useSelector(selectCommentsLoading);   
   let post = null;
-  let commentsToRender = <div className='no-comments'><TbUfo className='ufo'/><span>no comments found...</span></div>;
+  let commentsToRender = <ErrorMessage type='comments' />;
 
     useEffect(() => {
         dispatch(fetchComments({subreddit, postId}))

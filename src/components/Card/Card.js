@@ -1,9 +1,8 @@
 import React from "react";
-import "./Card.css";
 import ReactMarkdown from "react-markdown";
-
 import { MdForum } from "react-icons/md";
 import { Link } from "react-router-dom";
+import "./Card.css";
 
 export const Card = ({
   subreddit_name_prefixed,

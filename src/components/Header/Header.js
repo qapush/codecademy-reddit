@@ -1,5 +1,4 @@
 import React from "react";
-import "./header.css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectMobileMenuOpened, mobileMenuToggle } from "../../features/mobileMenuSlice";
 import { currentFeedChange } from "../../features/feedSlice";
@@ -9,7 +8,7 @@ import MediaQuery from 'react-responsive'
 import Switch from "../Switch/Switch";
 import Search from "../Search/Search";
 import { Link } from "react-router-dom";
-
+import "./header.css";
 
 
 export default function Header() {
