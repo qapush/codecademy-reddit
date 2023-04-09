@@ -3,9 +3,7 @@ import { Card } from "../Card/Card";
 import { Comments } from "../Comments/Comments";
 
 
-
 export default function Posts({ feed, comments }) {
-  
   window.scrollTo(0, 0);
 
   const feedContent = feed.map((feedData) => {
@@ -38,8 +36,12 @@ export default function Posts({ feed, comments }) {
     );
   });
 
-  return <>
-    {feedContent}
-    {comments ? <Comments/> : null }
-  </>;
+  return (
+    <>
+
+        {feedContent}
+
+      {comments ? <Comments /> : null}
+    </>
+  );
 }
