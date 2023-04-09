@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React light",
+  "name": "Light reddit viewer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,5 +20,5 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#ffffff"
+  "background_color": "#E84B1F"
 }
