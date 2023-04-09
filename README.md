@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a part of Front End Engineer path on Codecademy. Main goal is to apply the gained knowledge while building a sort of light version of Reddit app. Project incorporates Reddit JSON API as a source of data, React as a UI layer, Redux for state management and Git as a version control tool.
+This project is a part of Front End Engineer path on Codecademy. Main goal is to apply the gained knowledge while building a sort of lite version of Reddit app. Project incorporates Reddit JSON API as a source of data, React as a UI layer, Redux for state management and Git as a version control tool.
 
 Live version of the project is deployed on Netlify and is available here: https://qapush-reddit.netlify.app/
 
