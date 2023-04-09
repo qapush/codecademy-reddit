@@ -17,8 +17,7 @@ export default function Header() {
   const mobileMenuActive = useSelector(selectMobileMenuOpened);
   const dispatch = useDispatch();
 
-  let burgerButtonClass = "hamburger hamburger--collapse"
-  if (mobileMenuActive) burgerButtonClass += " is-active";
+
   const toggleMobileMenu = () => {
     dispatch(mobileMenuToggle())
   }
@@ -35,7 +34,7 @@ export default function Header() {
           <Switch />
           
           <MediaQuery maxWidth={700}>
-            <button className={burgerButtonClass} type="button" onClick={toggleMobileMenu}>
+            <button className={`hamburger hamburger--collapse ${mobileMenuActive ? ' is-active' : ''}`} type="button" onClick={toggleMobileMenu}>
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
               </span>

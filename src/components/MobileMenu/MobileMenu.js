@@ -5,12 +5,9 @@ import './MobileMenu.css';
 
 
 export default function MobileMenu({ show }) {
-    
-    let menuClass = 'mobile__menu';
-    if (show) menuClass += ' show';
 
   return (  
-    <div className={menuClass}>
+    <div className={`mobile__menu ${show ? ' show' : ''}`}>
           <div className="subreddits">
               <SubredditsList />
               <Search/>
