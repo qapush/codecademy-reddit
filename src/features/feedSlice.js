@@ -7,7 +7,7 @@ export const fetchFeed = createAsyncThunk(
         {
             mode: "no-cors",
             headers: {
-                "User-Agent": "QAPUSH41",
+                "User-Agent": "qpsh/41 by someone",
               },
         } );
         const res = await data.json();
